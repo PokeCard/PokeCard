@@ -1,9 +1,5 @@
 function Home() {
-  return (
-    <>
-      <h1 className="display-2">Test Bootstrap</h1>
-    </>
-  );
+  return <></>;
 }
 
 export default Home;
