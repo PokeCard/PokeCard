@@ -1,7 +1,5 @@
-import "./App.css";
-
-function App() {
-  return <>g</>;
+function Catch() {
+  return <></>;
 }
 
-export default App;
+export default Catch;

@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import Catch from "./pages/Catch.jsx";
 
 const router = createBrowserRouter([
   {
