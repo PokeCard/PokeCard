@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { useEffect, useState } from 'react'
+import Card1 from '../Components/Card1'
 
 const Home1 = () => {
   const [pokemon, setPokemon] = useState([])
@@ -6,7 +8,7 @@ const Home1 = () => {
   const readData = async () => {
     try {
       // setIsLoading(true)
-      let { data } = await axios.get('https://pokeapi.co/api/v2/pokemon')
+      let { data } = await axios.get('https://pokeapi.deno.dev/pokemon?limit=20')
       setPokemon(data)
       console.log(data)
       // setIsLoading(false)
@@ -19,7 +21,7 @@ const Home1 = () => {
 
   return (
     <div>
-
+      {pokemon.map((item, index) => <Card1 item={item} key={index} />)}
     </div>
   )
 }
