@@ -1,14 +1,15 @@
-
+import axios from 'axios'
 
 const Home1 = () => {
+  const [pokemon, setPokemon] = useState([])
   // GET DATA
   const readData = async () => {
     try {
-      setIsLoading(true)
-      let { data } = await axios.get
-      setTodos(data)
-      setTodosData(data)
-      setIsLoading(false)
+      // setIsLoading(true)
+      let { data } = await axios.get('https://pokeapi.co/api/v2/pokemon')
+      setPokemon(data)
+      console.log(data)
+      // setIsLoading(false)
     }
     catch (e) {
       console.log(e)
