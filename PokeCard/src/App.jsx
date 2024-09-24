@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <div class='background'>
+    <body class='background'>
       <NavbarAboutUs />
       <h2 className='display-5 text-center text-light'>Our Team</h2>
       <p className='text-center text-light'>Consist of talentful person, coming from all corner of the islands. Here they are!</p>
@@ -23,7 +23,7 @@ function App() {
         </div>
       </section>
       <footer class='footer'>Footer</footer>
-      </div>
+      </body>
     </>
   )
 }

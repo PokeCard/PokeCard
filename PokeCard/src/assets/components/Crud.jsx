@@ -1,0 +1,7 @@
+const Crud = () => {
+    return (
+        <>
+        
+        </>
+    )
+}
