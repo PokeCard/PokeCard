@@ -2,7 +2,7 @@ function Aside() {
   return (
     <>
       <div className="d-flex flex-column align-items-center">
-        <h5>Julio</h5>
+        <h5>Bang Maju</h5>
         <img
           src="../public/character.png"
           alt="character"

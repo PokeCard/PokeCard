@@ -1,15 +1,22 @@
+import Table from "react-bootstrap/Table";
 function MainMenu() {
   return (
     <>
-      <section className="mt-5">
-        <h5 className="">Main Menu</h5>
-        <div className="d-flex gap-2 pt-2 justify-content-center">
-          <div className="d-flex flex-column gap-2">
-            <h6>Pokemons</h6>
-            <h6>Catch </h6>
-            <h6>About</h6>
-          </div>
-        </div>
+      <section className="mt-5" style={{ width: "21rem" }}>
+        <h5 className="d-flex justify-content-center">Main Menu</h5>
+        <Table bordered hover variant="dark" className="mt-3">
+          <tbody>
+            <tr>
+              <td>All Pokemons</td>
+            </tr>
+            <tr>
+              <td>Catch Pokemon</td>
+            </tr>
+            <tr>
+              <td>About Us</td>
+            </tr>
+          </tbody>
+        </Table>
       </section>
     </>
   );
