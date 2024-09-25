@@ -9,7 +9,6 @@ function ModalPokemon(props) {
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
-
     >
       <div style={{ backgroundColor: "#0E181F" }} className='text-white p-2'>
         <Modal.Body>
@@ -18,7 +17,7 @@ function ModalPokemon(props) {
           </Card>
           <div className="d-flex justify-content-between align-items-center mt-3">
             <h4 className='mb-0'>{props.item.name}</h4>
-            <h5 className='mb-0'>#00{props.item.id}</h5>
+            <h5 className='mb-0'>#{props.item.id.toString().padStart(4, '0')}</h5>
           </div>
           <small > <strong> Types: </strong><em>{props.item.types.join(', ')}</em></small>
           <p className="mt-2 mb-0">
