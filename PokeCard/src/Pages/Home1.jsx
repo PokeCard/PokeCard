@@ -10,6 +10,8 @@ const Home1 = () => {
       // setIsLoading(true)
       let { data } = await axios.get('https://pokeapi.deno.dev/pokemon?limit=20')
       setPokemon(data)
+
+
       console.log(data)
       // setIsLoading(false)
     }
@@ -20,8 +22,13 @@ const Home1 = () => {
   useEffect(() => { readData(); }, [])
 
   return (
-    <div>
-      {pokemon.map((item, index) => <Card1 item={item} key={index} />)}
+    <div className="container">
+      <div className="row">
+
+        {pokemon.map((item, index) => <Card1 item={item} key={index} />)}
+
+      </div>
+
     </div>
   )
 }
