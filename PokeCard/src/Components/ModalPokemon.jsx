@@ -1,8 +1,11 @@
 import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate } from 'react-router-dom';
 
 function ModalPokemon(props) {
+  const navigate = useNavigate();
+
   return (
     <Modal
       {...props}
@@ -26,7 +29,7 @@ function ModalPokemon(props) {
         </Modal.Body>
         <Modal.Footer className='d-flex flex-column justify-content-center'>
           <Button className='btn w-100' style={{ backgroundColor: "#67A15B" }}>Catch</Button>
-          <Button className='btn w-100' style={{ backgroundColor: "#234B83" }}>See More Detail</Button>
+          <Button className='btn w-100' style={{ backgroundColor: "#234B83" }} onClick={() => { navigate(`/detail/${props.item.id}`) }}>See More Detail</Button>
         </Modal.Footer>
       </div>
     </Modal>

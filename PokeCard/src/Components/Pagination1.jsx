@@ -4,6 +4,7 @@ import Card1 from './Card1';
 
 const Pagination1 = () => {
   const [pokemonData, setPokemonData] = useState([]);
+  const [searchPokemon, setSearchPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
   const limit = 20; // Fixed limit
 
@@ -11,6 +12,7 @@ const Pagination1 = () => {
     try {
       const { data } = await axios.get(`https://pokeapi.deno.dev/pokemon?offset=${offset}&limit=${limit}`);
       setPokemonData(data);
+      setSearchPokemon(data);
     } catch (error) {
       console.error('Error fetching Pokémon:', error);
     }
@@ -32,12 +34,25 @@ const Pagination1 = () => {
     }
   };
 
+  const handleSearch = (e) => {
+    let search = pokemonData.filter((item) => {
+      return item.name.toLowerCase().includes(e.target.value)
+    })
+    setSearchPokemon(search);
+  }
+
   return (
     <div>
       <h1>Pokémon List</h1>
+      <input
+        type="text"
+        placeholder="search your pokemon.."
+        className="search"
+        onChange={handleSearch}
+      />
       <div className="container">
         <div className="row">
-          {pokemonData.map((item, index) => <Card1 item={item} key={index} />)}
+          {searchPokemon.map((item, index) => <Card1 item={item} key={index} />)}
         </div>
       </div>
       <button onClick={handlePrevious} disabled={offset === 0}>Previous</button>
