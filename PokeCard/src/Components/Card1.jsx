@@ -2,12 +2,13 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ModalPokemon from './ModalPokemon';
 import React from 'react';
+import { ProgressBar } from 'react-bootstrap';
 
 function Card1({ item }) {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
-      <div className="col-2" onClick={() => setModalShow(true)}>
+      <div className="col-sm-2" onClick={() => setModalShow(true)}>
         <Card style={{ width: '10rem' }}>
           <Card.Img variant="top" style={{ backgroundColor: item.color }} src={item.imageUrl} />
           <Card.Body>
@@ -19,6 +20,8 @@ function Card1({ item }) {
       <ModalPokemon
         show={modalShow}
         onHide={() => setModalShow(false)} item={item} />
+
+
     </>
   );
 }
