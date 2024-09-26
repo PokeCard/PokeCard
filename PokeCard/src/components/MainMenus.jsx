@@ -1,3 +1,5 @@
+import { FaOptinMonster } from "react-icons/fa";
+
 import Table from "react-bootstrap/Table";
 function MainMenu() {
   return (
@@ -7,10 +9,13 @@ function MainMenu() {
         <Table bordered hover variant="dark" className="mt-3">
           <tbody>
             <tr>
-              <td>All Pokemons</td>
+              <td>All Pokemon</td>
             </tr>
             <tr>
-              <td>Catch Pokemon</td>
+              <td>My Pokemon</td>
+            </tr>
+            <tr>
+              <td>Create Team</td>
             </tr>
             <tr>
               <td>About Us</td>

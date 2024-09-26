@@ -9,7 +9,7 @@ function Aside() {
           style={{ height: "18rem", width: "9rem" }}
         />
         <h6 className="mt-2">Level 1</h6>
-        <h7 className="">Poke Master</h7>
+        <h6 className="">Poke Master</h6>
       </div>
     </>
   );
