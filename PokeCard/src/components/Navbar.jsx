@@ -5,12 +5,11 @@ function Navbar() {
     <>
       <nav
         style={{
-          position: "fixed",
           backgroundColor: "#152027",
         }}
         className="d-flex container-fluid justify-content-between align-items-center p-2 item-center"
       >
-        <div className="d-flex gap-1 align-items-center text-white mx-4">
+        <div className="d-flex gap-1 align-items-center text-white mx-5">
           <img
             src="../public/logo.png"
             alt="logo"
@@ -19,7 +18,7 @@ function Navbar() {
           />
           <h6 className="mt-2">PokeCard</h6>
         </div>
-        <div className="d-flex gap-1 align-items-center mx-4">
+        <div className="d-flex gap-1 align-items-center mx-5">
           <Image
             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
             roundedCircle
