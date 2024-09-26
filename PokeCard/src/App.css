@@ -1,0 +1,15 @@
+.text-align {
+    text-align: center;
+
+}
+
+.footer {
+    text-align: center;
+    background: whitesmoke;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.background {
+    background-color: black;
+}
