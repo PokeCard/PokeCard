@@ -7,8 +7,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function App() {
-
-
   return (
     <>
       <body class='background'>
@@ -50,7 +48,7 @@ function App() {
         </Form>
       </body>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
