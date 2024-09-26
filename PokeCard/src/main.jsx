@@ -8,6 +8,8 @@ import Layout from "../src/pages/Layout.jsx";
 import Catch from "./pages/Catch.jsx";
 import Detail from "./pages/Detail.jsx";
 import Home from "./pages/home.jsx";
+import AboutUs from "./Pages/AboutUs.jsx";
+import Team from "./Pages/Team.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +28,15 @@ const router = createBrowserRouter([
         path: "/detail/:id",
         element: <Detail />,
       },
+      {
+        path: "/team",
+        element: <Team />,
+      },
     ],
+  },
+  {
+    path: "/AboutUs",
+    element: <AboutUs />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
