@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import List from './List.jsx'
 
 const Crud = () => {
     return (
