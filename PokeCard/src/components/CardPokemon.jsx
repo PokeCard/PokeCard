@@ -1,5 +1,9 @@
 import { Card } from "react-bootstrap";
+import ModalPokemon from "./ModalPokemon";
+import React from "react";
+
 function CardPokemon({ pokemon }) {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
       <Card
@@ -7,6 +11,7 @@ function CardPokemon({ pokemon }) {
           width: "16.7rem",
           backgroundColor: pokemon.color,
         }}
+        onClick={() => setModalShow(true)}
       >
         <Card.Body className="d-flex justify-content-between gap-3 align-items-center">
           <div className="">
@@ -25,6 +30,11 @@ function CardPokemon({ pokemon }) {
           />
         </Card.Body>
       </Card>
+      <ModalPokemon
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        item={pokemon}
+      />
     </>
   );
 }
