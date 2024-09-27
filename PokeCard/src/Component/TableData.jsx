@@ -29,19 +29,6 @@ const TableData = ({
     readData();
   };
 
-  // const handleEditId = async (id) => {
-  //   try {
-  //     await axios.patch(`https://kindly-complete-end.glitch.me/team/${id}`, {
-  //       "team": teamName,
-  //       "pokemon": pokemonName
-  //     })
-  //   }
-  //   catch (e) {
-  //     console.log(e)
-  //   }
-  //   readData()
-  // }
-
   const handleEdit = (params) => {
     setTeamName(params.team);
     setPokemonName(params.pokemon);

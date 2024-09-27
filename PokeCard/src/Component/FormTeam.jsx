@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import Swal from "sweetalert2";
 
@@ -13,21 +12,6 @@ const FormTeam = ({
   isEdit,
   idEdit,
 }) => {
-  // const handleEdit = async () => {
-  //   try {
-  //     await axios.put(
-  //       `https://kindly-complete-end.glitch.me/team/${dataTeam.id}`,
-  //       {
-  //         team: teamName,
-  //         pokemon: pokemonName,
-  //       }
-  //     );
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  //   readData();
-  // };
-
   const postData = async (e) => {
     e.preventDefault();
 

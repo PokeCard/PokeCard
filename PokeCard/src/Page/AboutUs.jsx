@@ -1,27 +1,27 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import NavbarAboutUs from "../Components/NavbarAboutUs";
-import CardAboutUs from "../Components/CardAboutUs";
-import Footer from "../components/Footer";
+import NavbarAboutUs from "../Component/NavbarAboutUs";
+import Footer from "../Component/Footer";
 import Card from "react-bootstrap/Card";
 function AboutUs() {
   let data = [
     {
       Gambar: "https://avatars.githubusercontent.com/u/89517552?s=96&v=4",
       Name: "Julio Andarestu",
-      Motto: "All is Well",
+      Motto:
+        "Success is not the result of spontaneous combustion. You must set yourself on fire with determination and passion.",
       LinkGitHub: "https://github.com/julioandarestu",
     },
     {
       Gambar: "https://avatars.githubusercontent.com/u/175142981?v=4",
       Name: "Diana Novita",
-      Motto: "Nothing to Lose",
+      Motto:
+        "Believe in yourself, even when the world doubts you. Your potential is greater than any obstacle.",
       LinkGitHub: "https://github.com/diananov11",
     },
     {
       Gambar: "https://avatars.githubusercontent.com/u/176256023?v=4",
       Name: "Ivan Dana Saputra",
-      Motto: "Everything is Going to be Allright",
+      Motto:
+        "Every step you take, no matter how small, brings you closer to your dreams. Keep moving forward.",
       LinkGitHub: "https://github.com/ivandanasaputra",
     },
   ];
