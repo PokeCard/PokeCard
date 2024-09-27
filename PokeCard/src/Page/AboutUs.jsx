@@ -1,55 +1,86 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+<<<<<<< HEAD:PokeCard/src/Page/AboutUs.jsx
 import NavbarAboutUs from "../Component/NavbarAboutUs";
 import CardAboutUs from "../Component/CardAboutUs";
 import Footer from "../Component/Footer";
 
+=======
+import NavbarAboutUs from "../Components/NavbarAboutUs";
+import CardAboutUs from "../Components/CardAboutUs";
+import Footer from "../components/Footer";
+import Card from "react-bootstrap/Card";
+>>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/Pages/AboutUs.jsx
 function AboutUs() {
+  let data = [
+    {
+      Gambar: "https://avatars.githubusercontent.com/u/89517552?s=96&v=4",
+      Name: "Julio Andarestu",
+      Motto: "All is Well",
+      LinkGitHub: "https://github.com/julioandarestu",
+    },
+    {
+      Gambar: "https://avatars.githubusercontent.com/u/175142981?v=4",
+      Name: "Diana Novita",
+      Motto: "Nothing to Lose",
+      LinkGitHub: "https://github.com/diananov11",
+    },
+    {
+      Gambar: "https://avatars.githubusercontent.com/u/176256023?v=4",
+      Name: "Ivan Dana Saputra",
+      Motto: "Everything is Going to be Allright",
+      LinkGitHub: "https://github.com/ivandanasaputra",
+    },
+  ];
+
   return (
     <>
-      <NavbarAboutUs />
-      <body style={{ background: "#0E181F" }} className="min-vh-100 pt-5">
-        <h1 className="text-center text-light">Our Team</h1>
+      <div style={{ background: "#0E181F" }} className="min-vh-100">
+        <NavbarAboutUs />
+        <h1 className="text-center text-light mt-5">Our Team</h1>
         <p className="text-center text-light">
           Consist of talentful person, coming from all corner of the islands.
           Here they are!
         </p>
-        <section className="container text-center ">
-          <div className="row justify-content-around ">
-            {["Julio", "Diana", "Ivan"].map((item) => {
-              return <CardAboutUs />;
-            })}
+        <div class="row ">
+          <div className="d-flex justify-content-center gap-5">
+            {data.map((item) => (
+              <Card style={{ width: "16rem" }} className="mt-4 mb-4">
+                <Card.Img
+                  className="object-fit-sm-cover border rounded"
+                  variant="top"
+                  src={item.Gambar}
+                />
+                <Card.Body>
+                  <Card.Title>{item.Name}</Card.Title>
+                  <Card.Text>{item.Motto}</Card.Text>
+                  <Card.Link href={item.LinkGitHub}>My Github</Card.Link>
+                </Card.Body>
+              </Card>
+            ))}
           </div>
-        </section>
-
-        {/* ------------------------
-        <h1 className="display-6">Creat Your Team</h1>
-        <Form>
-          <div className="container">
-            <div className="row justify-content-between">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Create Team</Form.Label>
-                <Form.Control type="email" placeholder="Create Team" />
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formBasicPassword">
-                <Form.Label>Pokemon</Form.Label>
-                <Form.Control type="password" placeholder="Select.." />
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formButton">
-                <Form.Text className="text-muted">
-                  <Button variant="primary" type="submit">
-                    Add Data
-                  </Button>
-                </Form.Text>
-              </Form.Group>
-            </div>
-          </div>
-        </Form> */}
-      </body>
+        </div>
+      </div>
       <Footer />
     </>
   );
 }
 
 export default AboutUs;
+
+// let Gambar = [
+//   "https://avatars.githubusercontent.com/u/89517552?s=96&v=4",
+//   "https://avatars.githubusercontent.com/u/175142981?v=4",
+//   "https://avatars.githubusercontent.com/u/176256023?v=4",
+// ];
+// let Name = ["Julio Andarestu", "Diana Novita", "Ivan Dana Saputra"];
+// let Motto = [
+//   "All is Well",
+//   "Nothing to Lose",
+//   "Everything is Going to be Allright",
+// ];
+// let LinkGitHub = [
+//   "https://github.com/julioandarestu",
+//   "https://github.com/diananov11",
+//   "https://github.com/ivandanasaputra",
+// ];

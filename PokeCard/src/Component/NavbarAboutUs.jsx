@@ -1,6 +1,8 @@
 import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
+import { useNavigate } from "react-router-dom";
 const NavbarAboutUs = () => {
+  const navigate = useNavigate();
   return (
     <>
       <nav
@@ -20,9 +22,27 @@ const NavbarAboutUs = () => {
         </div>
         <div className="d-flex gap-4 align-items-center mx-5">
           <div className="text-white d-flex gap-3">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#favorite">Favoruite</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate(`/`);
+              }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate(`/catch`);
+              }}
+            >
+              Favorite
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate(`/catch`);
+              }}
+            >
+              About Us
+            </Nav.Link>
           </div>
           <div className="d-flex align-items-center">
             <Image
