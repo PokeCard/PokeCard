@@ -1,8 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import NavbarAboutUs from "../Components/NavbarAboutUs";
-import CardAboutUs from "../Components/CardAboutUs";
-import Footer from "../components/Footer";
+import NavbarAboutUs from "../Component/NavbarAboutUs";
+import CardAboutUs from "../Component/CardAboutUs";
+import Footer from "../Component/Footer";
 
 function AboutUs() {
   return (

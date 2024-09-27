@@ -1,10 +1,10 @@
 import { Button } from "react-bootstrap";
-import Aside from "../components/Aside";
-import CardPokemon from "../components/CardPokemon";
-import Footer from "../components/Footer";
-import MainMenu from "../components/MainMenus";
-import Navbar from "../components/Navbar";
-import SearchBar from "../components/SearchBar";
+import Aside from "../Component/Aside";
+import CardPokemon from "../Component/CardPokemon";
+import Footer from "../Component/Footer";
+import MainMenu from "../Component/MainMenus";
+import Navbar from "../Component/Navbar";
+import SearchBar from "../Component/SearchBar";
 
 function Catch() {
   return (

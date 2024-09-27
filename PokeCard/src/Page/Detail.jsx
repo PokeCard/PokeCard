@@ -9,8 +9,8 @@ import {
   Row,
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import Stat from "../Components/Stat";
-import CardDetail from "../Components/CardDetail";
+import Stat from "../Component/Stat";
+import CardDetail from "../Component/CardDetail";
 
 const Detail = () => {
   let { id } = useParams();
