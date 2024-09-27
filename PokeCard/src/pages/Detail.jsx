@@ -6,10 +6,11 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Stat from "../Components/Stat";
 import CardDetail from "../Components/CardDetail";
 import Swal from "sweetalert2";
+// import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const Detail = () => {
   let { id } = useParams();
@@ -45,7 +46,10 @@ const Detail = () => {
       className="text-white min-vh-100"
     >
       <Container className="pt-3">
-        <h3>Detail Pokemon</h3>
+        <div className="d-flex justify-content-between align-items-center">
+          <h3>Detail Pokemon</h3>
+          <h6><NavLink to='/' className="text-white ps-2" >Back to Home</NavLink></h6>
+        </div>
         <Row>
           <Col
             md={3}
