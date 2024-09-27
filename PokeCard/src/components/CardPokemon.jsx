@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
-import ModalPokemon from "./ModalPokemon";
+
 import React from "react";
+import ModalPokemon from "./ModalPokemon";
 
 function CardPokemon({ pokemon }) {
   const [modalShow, setModalShow] = React.useState(false);

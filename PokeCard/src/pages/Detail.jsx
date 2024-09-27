@@ -2,20 +2,19 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {
   Button,
-  Card,
   Col,
   Container,
-  ProgressBar,
   Row,
 } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import Stat from "../Components/Stat";
 import CardDetail from "../Components/CardDetail";
+import Swal from "sweetalert2";
 
 const Detail = () => {
   let { id } = useParams();
   const [detailPokemon, setDetailPokemon] = useState([]);
-  // console.log(detailPokemon.stats.HP)
+
 
   const fetchDetail = async () => {
     try {
@@ -24,6 +23,11 @@ const Detail = () => {
       setDetailPokemon(response.data);
     } catch (e) {
       console.log(e);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Something went wrong! ${e}`,
+      });
     }
   };
 
@@ -45,15 +49,16 @@ const Detail = () => {
         <Row>
           <Col
             md={3}
-            className="d-flex flex-column justify-content-center gap-5"
+            className="d-flex flex-column justify-content-center align-items-center gap-2"
           >
             <div>
               <h3 className="mt-3">
                 #{detailPokemon.id.toString().padStart(4, "0")}
               </h3>
               <h5>Genus: {detailPokemon.genus}</h5>
+              <h5>Types: {detailPokemon.types.join(', ')}</h5>
             </div>
-            <CardDetail
+            <CardDetail className="d-none"
               widthCard="17rem"
               cardTitle="Description"
               cardContent={<p>{detailPokemon.description}</p>}

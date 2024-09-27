@@ -1,4 +1,4 @@
-import { FaOptinMonster } from "react-icons/fa";
+// import { FaOptinMonster } from "react-icons/fa";
 
 import Table from "react-bootstrap/Table";
 function MainMenu() {

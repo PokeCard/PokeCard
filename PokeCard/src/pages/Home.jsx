@@ -5,21 +5,23 @@ import SearchBar from "../components/SearchBar";
 import MainMenu from "../components/MainMenus";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import Pagination1 from "../components/Pagination";
 
 function Home() {
   const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
   const limit = 20; // Fixed limit
+  const [loadingSpin, setLoadingSpin] = useState(false)
 
   const fetchPokemon = async (offset) => {
     try {
+      setLoadingSpin(true)
       const { data } = await axios.get(
         `https://pokeapi.deno.dev/pokemon?offset=${offset}&limit=${limit}`
       );
       setPokemon(data);
+      setLoadingSpin(false)
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
     }
