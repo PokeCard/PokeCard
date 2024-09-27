@@ -1,18 +1,15 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-// import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "../src/pages/Layout.jsx";
-import Catch from "./pages/Catch.jsx";
-import Detail from "./pages/Detail.jsx";
-
-import AboutUs from "./Pages/AboutUs.jsx";
-import Team from "./Pages/Team.jsx";
-import ErrorPage from "./Pages/ErrorPage.jsx";
-import Loading from "./pages/LoadingPoke.jsx";
-import Home from "./pages/home.jsx";
+import Layout from "../src/Page/Layout.jsx";
+import Catch from "./Page/Catch.jsx";
+import Detail from "./Page/Detail.jsx";
+import Home from "./Page/Home.jsx";
+import AboutUs from "./Page/AboutUs.jsx";
+import Team from "./Page/Team.jsx";
+import ErrorPage from "./Page/ErrorPage.jsx";
+import Loading from "./Page/LoadingPoke.jsx";
 
 const router = createBrowserRouter([
   {

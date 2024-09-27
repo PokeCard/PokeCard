@@ -1,14 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {
-  Button,
-  Col,
-  Container,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import Stat from "../Component/Stat";
+import CardDetail from "../Component/CardDetail";
 import { useNavigate, useParams } from "react-router-dom";
-import Stat from "../Components/Stat";
-import CardDetail from "../Components/CardDetail";
 import LoadingPoke from "./LoadingPoke.jsx";
 import Swal from "sweetalert2";
 
@@ -16,7 +11,6 @@ const Detail = () => {
   let { id } = useParams();
   const navigate = useNavigate();
   const [detailPokemon, setDetailPokemon] = useState([]);
-
 
   const fetchDetail = async () => {
     try {
@@ -101,9 +95,10 @@ const Detail = () => {
                 #{detailPokemon.id.toString().padStart(3, "0")}
               </h3>
               <h5>Genus: {detailPokemon.genus}</h5>
-              <h5>Types: {detailPokemon.types.join(', ')}</h5>
+              <h5>Types: {detailPokemon.types.join(", ")}</h5>
             </div>
-            <CardDetail className="d-none"
+            <CardDetail
+              className="d-none"
               widthCard="17rem"
               cardTitle="Description"
               cardContent={<p>{detailPokemon.description}</p>}

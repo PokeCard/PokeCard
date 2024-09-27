@@ -1,12 +1,11 @@
-import Aside from "../components/Aside";
-import CardPokemon from "../components/CardPokemon";
+import Aside from "../Component/Aside";
+import CardPokemon from "../Component/CardPokemon";
 import "../App.css";
-import SearchBar from "../components/SearchBar";
-import MainMenu from "../components/MainMenus";
+import SearchBar from "../Component/SearchBar";
+import MainMenu from "../Component/MainMenus";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Pagination from "../components/Pagination";
-import LoadingSpin from "../components/LoadingSpin";
+import Pagination from "../Component/Pagination";
 import Swal from "sweetalert2";
 
 function Home() {
@@ -55,10 +54,19 @@ function Home() {
       let { data } = await axios.get(
         `https://pokeapi.deno.dev/pokemon/${search}`
       );
+
+      if (!data) {
+        throw Error("Pokemon Not Found!");
+      }
+
       setPokemon([data]);
       console.log(data);
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Pokemon Not Found!`,
+      });
     }
   };
 
@@ -66,7 +74,6 @@ function Home() {
     search.preventDefault();
     const { value } = search.target[0];
     handleSearch(value);
-    console.log(value);
   };
 
   useEffect(() => {
@@ -93,6 +100,7 @@ function Home() {
               label="All Pokemon"
               handleChange={handleChange}
               handleSearch={handleSearch}
+              display="block"
             />
             <Pagination offset={offset} setOffset={setOffset} limit={limit} />
           </div>

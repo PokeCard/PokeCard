@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../Component/Footer";
+import Navbar from "../Component/Navbar";
 import { useNavigate } from "react-router-dom";
 
 function ErrorPage() {

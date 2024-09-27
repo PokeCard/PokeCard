@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import FormTeam from "../components/FormTeam";
-import TableList from "../components/TableList";
+import FormTeam from "../Component/FormTeam";
+import TableList from "../Component/TableList";
 import Swal from "sweetalert2";
 import axios from "axios";
 
