@@ -23,7 +23,6 @@ function ModalPokemon(props) {
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate(`/catch`);
     } catch (error) {
       Swal.fire({
         icon: "error",

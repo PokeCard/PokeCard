@@ -1,6 +1,16 @@
-import TableData from "./TableData"
+import TableData from "./TableData";
 
-const TableList = ({ dataTeam, readData, teamName, setTeamName, pokemonName, setPokemonName, isEdit, setIsEdit }) => {
+const TableList = ({
+  dataTeam,
+  readData,
+  teamName,
+  setTeamName,
+  pokemonName,
+  setPokemonName,
+  isEdit,
+  setIsEdit,
+  setIdEdit,
+}) => {
   // console.log(dataTeam)
   return (
     <>
@@ -14,11 +24,24 @@ const TableList = ({ dataTeam, readData, teamName, setTeamName, pokemonName, set
           </tr>
         </thead>
         <tbody>
-          {dataTeam.map((item, index) => <TableData key={index} item={item} readData={readData} teamName={teamName} setTeamName={setTeamName} pokemonName={pokemonName} setPokemonName={setPokemonName} isEdit={isEdit} setIsEdit={setIsEdit} />)}
+          {dataTeam.map((item, index) => (
+            <TableData
+              key={index}
+              item={item}
+              readData={readData}
+              teamName={teamName}
+              setTeamName={setTeamName}
+              pokemonName={pokemonName}
+              setPokemonName={setPokemonName}
+              isEdit={isEdit}
+              setIsEdit={setIsEdit}
+              setIdEdit={setIdEdit}
+            />
+          ))}
         </tbody>
       </table>
     </>
-  )
-}
+  );
+};
 
-export default TableList
+export default TableList;

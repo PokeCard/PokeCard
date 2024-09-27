@@ -5,30 +5,21 @@ import SearchBar from "../components/SearchBar";
 import MainMenu from "../components/MainMenus";
 import { useEffect, useState } from "react";
 import axios from "axios";
-<<<<<<< HEAD
-
-import Pagination1 from "../components/Pagination";
-import LoadingSpin from "../components/LoadingSpin";
-=======
 import Pagination from "../components/Pagination";
->>>>>>> 54b3d9b2c2331ab15a1e9f0a0a371a8d2278aa8e
+import LoadingSpin from "../components/LoadingSpin";
+import Swal from "sweetalert2";
 
 function Home() {
   const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
   const limit = 20; // Fixed limit
-<<<<<<< HEAD
-  const [loadingSpin, setLoadingSpin] = useState(false)
-
-  const fetchPokemon = async (offset) => {
-    try {
-      setLoadingSpin(true)
-=======
   const [level, setLevel] = useState(1);
   const [titlePlayer, setTitlePlayer] = useState("Poke Trainee");
+  const [loadingSpin, setLoadingSpin] = useState(false);
 
   const fetchFavPoke = async () => {
     try {
+      setLoadingSpin(true);
       const { data } = await axios.get(
         "https://boggy-well-tourmaline.glitch.me/fav"
       );
@@ -47,50 +38,35 @@ function Home() {
 
   const fetchPokemon = async (offset) => {
     try {
-      // if (search) {
-      //   const { data } = await axios.get(
-      //     `https://pokeapi.deno.dev/pokemon/${name}`
-      //   );
-      //   setPokemon(data);
-      //   setSearch(false);
-      // } else {
->>>>>>> 54b3d9b2c2331ab15a1e9f0a0a371a8d2278aa8e
       const { data } = await axios.get(
         `https://pokeapi.deno.dev/pokemon?offset=${offset}&limit=${limit}`
       );
       setPokemon(data);
-      setLoadingSpin(false)
+      setLoadingSpin(false);
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
     }
   };
 
   //handle search
-  // const handleSearch = async (search) => {
-  //   try {
-  //     let { data } = await axios.get(
-  //       `https://pokeapi.deno.dev/pokemon/${search}`
-  //     );
-  //     setPokemon(data);
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const handleSearch = async (search) => {
+    try {
+      let { data } = await axios.get(
+        `https://pokeapi.deno.dev/pokemon/${search}`
+      );
+      setPokemon([data]);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // const handleChange = (search) => {
-  //   search.preventDefault();
-  //   const { value } = search.target[0];
-  //   handleSearch(value);
-  //   console.log(value);
-  // };
-  // Swal.fire({
-  //   position: "center",
-  //   icon: "success",
-  //   title: "Your task has been added",
-  //   showConfirmButton: false,
-  //   timer: 1500,
-  // });
+  const handleChange = (search) => {
+    search.preventDefault();
+    const { value } = search.target[0];
+    handleSearch(value);
+    console.log(value);
+  };
 
   useEffect(() => {
     fetchPokemon(offset);
@@ -112,12 +88,23 @@ function Home() {
         </aside>
         <div className="col-9 container mt-2">
           <div className="d-md-flex justify-content-between align-items-center">
-            <SearchBar label="All Pokemon" />
+            <SearchBar
+              label="All Pokemon"
+              handleChange={handleChange}
+              handleSearch={handleSearch}
+            />
             <Pagination offset={offset} setOffset={setOffset} limit={limit} />
           </div>
           <div className="d-flex justify-content-between flex-wrap gap-2 pb-4">
             {pokemon.map((item) => (
-              <CardPokemon key={item.id} pokemon={item} loadingSpin={loadingSpin} />
+              <CardPokemon
+                key={item.id}
+                pokemon={item}
+                loadingSpin={loadingSpin}
+                fetchPokemon={fetchPokemon}
+                setLevel={setLevel}
+                setTitlePlayer={setTitlePlayer}
+              />
             ))}
           </div>
         </div>

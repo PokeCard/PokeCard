@@ -1,9 +1,9 @@
 import { FaSearch } from "react-icons/fa";
 
-function SearchBar({ label }) {
+function SearchBar({ label, handleChange, handleSearch }) {
   return (
     <>
-      <form action="">
+      <form action="" onSubmit={handleChange}>
         <div className="input-box d-md-flex mb-3 align-items-center pt-4">
           <h4 className="col-7 col-md-5 text-white">{label}</h4>
           <div className="d-flex align-items-center gap-2">

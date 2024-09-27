@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-// import { FaOptinMonster } from "react-icons/fa";
-
-=======
 import { FaSpaghettiMonsterFlying } from "react-icons/fa6";
 import { MdCatchingPokemon } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
->>>>>>> 54b3d9b2c2331ab15a1e9f0a0a371a8d2278aa8e
 import Table from "react-bootstrap/Table";
 import { LuSwords } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";

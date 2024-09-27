@@ -7,11 +7,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../src/pages/Layout.jsx";
 import Catch from "./pages/Catch.jsx";
 import Detail from "./pages/Detail.jsx";
-import Home from "./pages/Home.jsx";
+
 import AboutUs from "./Pages/AboutUs.jsx";
 import Team from "./Pages/Team.jsx";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import Loading from "./pages/LoadingPoke.jsx";
+import Home from "./pages/home.jsx";
 
 const router = createBrowserRouter([
   {
