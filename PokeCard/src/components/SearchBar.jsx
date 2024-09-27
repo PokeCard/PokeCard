@@ -1,12 +1,23 @@
-import { Button, InputGroup } from "react-bootstrap";
+import { FaSearch } from "react-icons/fa";
 
 function SearchBar({ label }) {
   return (
     <>
-      <div className="input-box col-4 d-flex mb-3 align-items-center pt-4">
-        <h4 className="col-5 text-white">{label}</h4>
-        <input type="text" className="form rounded px-2" />
-      </div>
+      <form action="">
+        <div className="input-box d-md-flex mb-3 align-items-center pt-4">
+          <h4 className="col-7 col-md-5 text-white">{label}</h4>
+          <div className="d-flex align-items-center gap-2">
+            <input
+              type="text"
+              className="form rounded px-2"
+              placeholder="Search..."
+            />
+            <button className="rounded" style={{ backgroundColor: "#152027" }}>
+              <FaSearch className="text-white mb-1" />
+            </button>
+          </div>
+        </div>
+      </form>
     </>
   );
 }

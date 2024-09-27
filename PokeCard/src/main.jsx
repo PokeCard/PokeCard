@@ -7,14 +7,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../src/pages/Layout.jsx";
 import Catch from "./pages/Catch.jsx";
 import Detail from "./pages/Detail.jsx";
-import Home from "./pages/home.jsx";
+import Home from "./pages/Home.jsx";
 import AboutUs from "./Pages/AboutUs.jsx";
 import Team from "./Pages/Team.jsx";
+import ErrorPage from "./Pages/ErrorPage.jsx";
+import Loading from "./pages/LoadingPoke.jsx";
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
-
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -32,10 +34,14 @@ const router = createBrowserRouter([
         path: "/team",
         element: <Team />,
       },
+      {
+        path: "/loading",
+        element: <Loading />,
+      },
     ],
   },
   {
-    path: "/AboutUs",
+    path: "/aboutUs",
     element: <AboutUs />,
   },
 ]);
