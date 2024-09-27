@@ -3,12 +3,11 @@ import { useState } from "react";
 import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function ModalPokemon(props) {
+function ModalDelete(props) {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
 
   const handleAddFav = async () => {
     try {
@@ -23,36 +22,11 @@ function ModalPokemon(props) {
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate(`/catch`);
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: `You've Already Caught a ${props.item.name}`,
         text: "Can Only Catch 1 Pokemon of Each Type!",
-      });
-    }
-  };
-
-  const handleRelease = async (id) => {
-    try {
-      Swal.fire({
-        title: `Release a ${props.item.name} ?`,
-        showCancelButton: true,
-        confirmButtonText: "Delete",
-      }).then(async (result) => {
-        if (result.isConfirmed) {
-          await axios.delete(
-            `https://boggy-well-tourmaline.glitch.me/fav/${id}`
-          );
-          Swal.fire("Released!", "", "success");
-          navigate(`/`);
-        }
-      });
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: `You've Can't Release a ${props.item.name}`,
-        text: "Thank You",
       });
     }
   };
@@ -80,30 +54,20 @@ function ModalPokemon(props) {
             </h5>
           </div>
           <small>
+            {" "}
             <strong> Types: </strong>
             <em>{props.item.types.join(", ")}</em>
           </small>
           <p className="mt-2 mb-0">{props.item.description}</p>
         </Modal.Body>
         <Modal.Footer className="d-flex flex-column justify-content-center">
-          {pathname === "/" ? (
-            <Button
-              className="btn w-100"
-              style={{ backgroundColor: "#67A15B" }}
-              onClick={handleAddFav}
-            >
-              Catch
-            </Button>
-          ) : (
-            <Button
-              className="btn w-100"
-              variant="danger"
-              style={{ backgroundColor: "#A02040" }}
-              onClick={() => handleRelease(props.item.id)}
-            >
-              Release
-            </Button>
-          )}
+          <Button
+            className="btn w-100"
+            style={{ backgroundColor: "#67A15B" }}
+            onClick={handleAddFav}
+          >
+            Catch
+          </Button>
           <Button
             className="btn w-100"
             style={{ backgroundColor: "#234B83" }}
@@ -119,4 +83,4 @@ function ModalPokemon(props) {
   );
 }
 
-export default ModalPokemon;
+export default ModalDelete;

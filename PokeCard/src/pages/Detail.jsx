@@ -6,14 +6,15 @@ import {
   Container,
   Row,
 } from "react-bootstrap";
-import { NavLink, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Stat from "../Components/Stat";
 import CardDetail from "../Components/CardDetail";
+import LoadingPoke from "./LoadingPoke.jsx";
 import Swal from "sweetalert2";
-// import { IoReturnUpBackOutline } from "react-icons/io5";
 
 const Detail = () => {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [detailPokemon, setDetailPokemon] = useState([]);
 
 
@@ -32,12 +33,34 @@ const Detail = () => {
     }
   };
 
+  const handleAddFav = async () => {
+    try {
+      await axios.post(
+        "https://boggy-well-tourmaline.glitch.me/fav",
+        detailPokemon
+      );
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Your catched a ${detailPokemon.name}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: `You've Already Caught a ${detailPokemon.name}`,
+        text: "Can Only Catch 1 Pokemon of Each Type!",
+      });
+    }
+  };
+
   useEffect(() => {
     fetchDetail();
   }, []);
 
   if (!detailPokemon || !detailPokemon.stats) {
-    return <div>Loading...</div>;
+    return <LoadingPoke />;
   }
 
   return (
@@ -47,8 +70,26 @@ const Detail = () => {
     >
       <Container className="pt-3">
         <div className="d-flex justify-content-between align-items-center">
-          <h3>Detail Pokemon</h3>
-          <h6><NavLink to='/' className="text-white ps-2" >Back to Home</NavLink></h6>
+          <div className="d-flex align-items-center gap-3">
+            <h3>Detail Pokemon</h3>
+            <button
+              className="p-1 pb-2 rounded text-white"
+              style={{ backgroundColor: "#152027" }}
+              onClick={() => {
+                navigate(`/`);
+              }}
+            >
+              &#8592; Home
+            </button>
+          </div>
+          <Button
+            className="mx-3"
+            onClick={() => {
+              navigate(`/catch`);
+            }}
+          >
+            My Pokemon
+          </Button>
         </div>
         <Row>
           <Col
@@ -57,7 +98,7 @@ const Detail = () => {
           >
             <div>
               <h3 className="mt-3">
-                #{detailPokemon.id.toString().padStart(4, "0")}
+                #{detailPokemon.id.toString().padStart(3, "0")}
               </h3>
               <h5>Genus: {detailPokemon.genus}</h5>
               <h5>Types: {detailPokemon.types.join(', ')}</h5>
@@ -76,7 +117,11 @@ const Detail = () => {
               alt={detailPokemon.name}
             />
             <h4 className="text-center">{detailPokemon.name}</h4>
-            <Button className="btn w-25" style={{ backgroundColor: "#67A15B" }}>
+            <Button
+              className="btn w-25"
+              style={{ backgroundColor: "#67A15B" }}
+              onClick={handleAddFav}
+            >
               Catch
             </Button>
           </Col>
