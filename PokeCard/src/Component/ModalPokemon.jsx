@@ -1,12 +1,3 @@
-<<<<<<< HEAD:PokeCard/src/Component/ModalPokemon.jsx
-import { Card } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import { useNavigate } from 'react-router-dom';
-
-function ModalPokemon(props) {
-  const navigate = useNavigate();
-=======
 import axios from "axios";
 import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -64,7 +55,6 @@ function ModalPokemon(props) {
       });
     }
   };
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/components/ModalPokemon.jsx
 
   return (
     <Modal
@@ -73,25 +63,6 @@ function ModalPokemon(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-<<<<<<< HEAD:PokeCard/src/Component/ModalPokemon.jsx
-      <div style={{ backgroundColor: "#0E181F" }} className='text-white p-2'>
-        <Modal.Body>
-          <Card >
-            <Card.Img variant="top image-fluid" style={{ backgroundColor: props.item.color }} src={props.item.imageUrl} />
-          </Card>
-          <div className="d-flex justify-content-between align-items-center mt-3">
-            <h4 className='mb-0'>{props.item.name}</h4>
-            <h5 className='mb-0'>#{props.item.id.toString().padStart(4, '0')}</h5>
-          </div>
-          <small > <strong> Types: </strong><em>{props.item.types.join(', ')}</em></small>
-          <p className="mt-2 mb-0">
-            {props.item.description}
-          </p>
-        </Modal.Body>
-        <Modal.Footer className='d-flex flex-column justify-content-center'>
-          <Button className='btn w-100' style={{ backgroundColor: "#67A15B" }}>Catch</Button>
-          <Button className='btn w-100' style={{ backgroundColor: "#234B83" }} onClick={() => { navigate(`/detail/${props.item.id}`) }}>See More Detail</Button>
-=======
       <div style={{ backgroundColor: "#0E181F" }} className="text-white p-2">
         <Modal.Body>
           <Card>
@@ -141,16 +112,10 @@ function ModalPokemon(props) {
           >
             See More Detail
           </Button>
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/components/ModalPokemon.jsx
         </Modal.Footer>
       </div>
     </Modal>
   );
 }
 
-<<<<<<< HEAD:PokeCard/src/Component/ModalPokemon.jsx
-
 export default ModalPokemon;
-=======
-export default ModalPokemon;
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/components/ModalPokemon.jsx

@@ -1,9 +1,3 @@
-<<<<<<< HEAD:PokeCard/src/Component/Pagination.jsx
-const Pagination = ({ offset, setOffset, limit }) => {
-  const handleNext = () => {
-    if (offset < 905) {
-      setOffset((prev) => prev + limit);
-=======
 import { useState } from "react";
 
 const Pagination = ({ offset, setOffset, limit }) => {
@@ -12,32 +6,12 @@ const Pagination = ({ offset, setOffset, limit }) => {
     if (offset < 905) {
       setOffset((prev) => prev + limit);
       setPagination((prev) => prev + 1);
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/components/Pagination.jsx
     }
   };
 
   const handlePrevious = () => {
     if (offset > 0) {
       setOffset((prev) => prev - limit);
-<<<<<<< HEAD:PokeCard/src/Component/Pagination.jsx
-    }
-  };
-
-  // const handleSearch = (e) => {
-  //   let search = pokemonData.filter((item) => {
-  //     return item.name.toLowerCase().includes(e.target.value);
-  //   });
-  //   setSearchPokemon(search);
-  // };
-
-  return (
-    <div>
-      <button onClick={handlePrevious} disabled={offset === 0}>
-        Previous
-      </button>
-      <button onClick={handleNext} disabled={offset >= 905}>
-        Next
-=======
       setPagination((prev) => prev - 1);
     }
   };
@@ -62,7 +36,6 @@ const Pagination = ({ offset, setOffset, limit }) => {
         className="rounded text-white pb-1"
       >
         &gt;
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/components/Pagination.jsx
       </button>
     </div>
   );

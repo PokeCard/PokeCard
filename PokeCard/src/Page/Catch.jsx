@@ -1,19 +1,9 @@
-import { Button } from "react-bootstrap";
-<<<<<<< HEAD:PokeCard/src/Page/Catch.jsx
 import Aside from "../Component/Aside";
 import CardPokemon from "../Component/CardPokemon";
-import Footer from "../Component/Footer";
 import MainMenu from "../Component/MainMenus";
-import Navbar from "../Component/Navbar";
 import SearchBar from "../Component/SearchBar";
-=======
-import Aside from "../components/Aside";
-import CardPokemon from "../components/CardPokemon";
-import MainMenu from "../components/MainMenus";
-import SearchBar from "../components/SearchBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
->>>>>>> 0dad943a90e4b655f0085015d824c35b06398047:PokeCard/src/pages/Catch.jsx
 
 function Catch() {
   const [favPoke, setFavPoke] = useState([]);
@@ -36,7 +26,11 @@ function Catch() {
         setTitlePlayer("Poke Trainee");
       }
     } catch (error) {
-      console.log(error);
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Something went wrong!`,
+      });
     }
   };
 
@@ -55,7 +49,7 @@ function Catch() {
         </aside>
         <div className="col-9 container mt-2">
           <div className="d-md-flex justify-content-between align-items-center">
-            <SearchBar label="My Pokemon" />
+            <SearchBar label="My Pokemon" display="none" />
           </div>
           <div className="d-flex justify-content-between flex-wrap gap-2 pb-4 justify-content-md-start">
             {favPoke.map((item) => (
