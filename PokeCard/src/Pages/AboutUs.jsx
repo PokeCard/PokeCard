@@ -4,7 +4,6 @@ import NavbarAboutUs from "../Components/NavbarAboutUs";
 import CardAboutUs from "../Components/CardAboutUs";
 import Footer from "../components/Footer";
 import Card from "react-bootstrap/Card";
-x;
 function AboutUs() {
   let data = [
     {

@@ -1,5 +1,4 @@
 import { Card } from "react-bootstrap";
-
 import React from "react";
 import ModalPokemon from "./ModalPokemon";
 import LoadingSpin from "./LoadingSpin";

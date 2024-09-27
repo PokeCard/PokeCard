@@ -38,13 +38,7 @@ function Home() {
 
   const fetchPokemon = async (offset) => {
     try {
-      // if (search) {
-      //   const { data } = await axios.get(
-      //     `https://pokeapi.deno.dev/pokemon/${name}`
-      //   );
-      //   setPokemon(data);
-      //   setSearch(false);
-      // } else {
+      setLoadingSpin(true);
       const { data } = await axios.get(
         `https://pokeapi.deno.dev/pokemon?offset=${offset}&limit=${limit}`
       );
