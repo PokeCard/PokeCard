@@ -1,52 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import FormTeam from "../components/FormTeam";
+import TableList from "../components/TableList";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const Team = () => {
-  //   const [tasks, seTasks] = useState([]);
-  //   const [newTask, setNewTask] = useState("");
+  const [dataTeam, setDataTeam] = useState([])
+  const [teamName, setTeamName] = useState("")
+  const [pokemonName, setPokemonName] = useState("")
+  const [isEdit, setIsEdit] = useState(false)
 
-  //   const handleInputChange = (event) => {};
+  const readData = async () => {
+    try {
 
-  //   const addList = () => {};
+      const { data } = await axios.get('https://kindly-complete-end.glitch.me/team')
+      setDataTeam(data)
+      console.log(data)
+    }
+    catch (e) {
+      console.log(e)
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Something went wrong! ${e}`
+      });
+    }
+    readData
+  }
+  useEffect(() => { readData() }, [])
 
-  //   const deleteList = (index) => {};
-
-  //   const editList = (index) => {};
-
-  <ol>
-    <li>
-      <button className="delete-button"></button>
-    </li>
-  </ol>;
 
   return (
-    <div
-      className="min-vh-100 text-white pt-4 d-flex flex-column align-items-center"
-      style={{ background: "#0E181F" }}
-    >
-      <h1 className="">Create Your Team</h1>
-      <Form>
-        <div className="container">
-          <div className="row justify-content-between">
-            <Form.Group className="" controlId="formBasicEmail">
-              <Form.Label>Team Name</Form.Label>
-              <Form.Control type="email" placeholder="Create Team" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group className="mb-4" controlId="formBasicPassword">
-              <Form.Label>Pokemon</Form.Label>
-              <Form.Control type="password" placeholder="Select.." />
-            </Form.Group>
-          </div>
-          <Button variant="primary" type="submit">
-            Add Data
-          </Button>
-        </div>
-      </Form>
+    <div className="min-vh-100" style={{ background: "#0E181F" }}>
+      <FormTeam dataTeam={dataTeam} readData={readData} teamName={teamName} setTeamName={setTeamName} pokemonName={pokemonName} setPokemonName={setPokemonName} isEdit={isEdit} />
+      <TableList dataTeam={dataTeam} readData={readData} teamName={teamName} setTeamName={setTeamName} pokemonName={pokemonName} setPokemonName={setPokemonName} isEdit={isEdit} setIsEdit={setIsEdit} />
     </div>
-  );
+  )
 };
 
 export default Team;

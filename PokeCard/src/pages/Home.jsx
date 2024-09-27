@@ -5,12 +5,25 @@ import SearchBar from "../components/SearchBar";
 import MainMenu from "../components/MainMenus";
 import { useEffect, useState } from "react";
 import axios from "axios";
+<<<<<<< HEAD
+
+import Pagination1 from "../components/Pagination";
+import LoadingSpin from "../components/LoadingSpin";
+=======
 import Pagination from "../components/Pagination";
+>>>>>>> 54b3d9b2c2331ab15a1e9f0a0a371a8d2278aa8e
 
 function Home() {
   const [pokemon, setPokemon] = useState([]);
   const [offset, setOffset] = useState(0);
   const limit = 20; // Fixed limit
+<<<<<<< HEAD
+  const [loadingSpin, setLoadingSpin] = useState(false)
+
+  const fetchPokemon = async (offset) => {
+    try {
+      setLoadingSpin(true)
+=======
   const [level, setLevel] = useState(1);
   const [titlePlayer, setTitlePlayer] = useState("Poke Trainee");
 
@@ -41,10 +54,12 @@ function Home() {
       //   setPokemon(data);
       //   setSearch(false);
       // } else {
+>>>>>>> 54b3d9b2c2331ab15a1e9f0a0a371a8d2278aa8e
       const { data } = await axios.get(
         `https://pokeapi.deno.dev/pokemon?offset=${offset}&limit=${limit}`
       );
       setPokemon(data);
+      setLoadingSpin(false)
     } catch (error) {
       console.error("Error fetching Pokémon:", error);
     }
@@ -102,7 +117,7 @@ function Home() {
           </div>
           <div className="d-flex justify-content-between flex-wrap gap-2 pb-4">
             {pokemon.map((item) => (
-              <CardPokemon key={item.id} pokemon={item} />
+              <CardPokemon key={item.id} pokemon={item} loadingSpin={loadingSpin} />
             ))}
           </div>
         </div>
