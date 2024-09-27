@@ -23,6 +23,7 @@ function ModalPokemon(props) {
         showConfirmButton: false,
         timer: 1500,
       });
+      navigate(`/catch`);
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -40,10 +41,10 @@ function ModalPokemon(props) {
         confirmButtonText: "Delete",
       }).then(async (result) => {
         if (result.isConfirmed) {
+          Swal.fire("Released!", "", "success");
           await axios.delete(
             `https://boggy-well-tourmaline.glitch.me/fav/${id}`
           );
-          Swal.fire("Released!", "", "success");
           navigate(`/`);
         }
       });

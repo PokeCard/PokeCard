@@ -4,13 +4,7 @@ import React from "react";
 import ModalPokemon from "./ModalPokemon";
 import LoadingSpin from "./LoadingSpin";
 
-function CardPokemon({
-  pokemon,
-  loadingSpin,
-  fetchPokemon,
-  setLevel,
-  setTitlePlayer,
-}) {
+function CardPokemon({ pokemon, loadingSpin }) {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
@@ -52,7 +46,6 @@ function CardPokemon({
         show={modalShow}
         onHide={() => setModalShow(false)}
         item={pokemon}
-        fetchPokemon={fetchPokemon}
       />
     </>
   );
