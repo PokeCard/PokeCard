@@ -2,16 +2,6 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 const Team = () => {
-  //   const [tasks, seTasks] = useState([]);
-  //   const [newTask, setNewTask] = useState("");
-
-  //   const handleInputChange = (event) => {};
-
-  //   const addList = () => {};
-
-  //   const deleteList = (index) => {};
-
-  //   const editList = (index) => {};
 
   <ol>
     <li>

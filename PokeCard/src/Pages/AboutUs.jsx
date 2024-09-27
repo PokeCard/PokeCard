@@ -21,31 +21,6 @@ function AboutUs() {
             })}
           </div>
         </section>
-
-        {/* ------------------------
-        <h1 className="display-6">Creat Your Team</h1>
-        <Form>
-          <div className="container">
-            <div className="row justify-content-between">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Create Team</Form.Label>
-                <Form.Control type="email" placeholder="Create Team" />
-                <Form.Text className="text-muted"></Form.Text>
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formBasicPassword">
-                <Form.Label>Pokemon</Form.Label>
-                <Form.Control type="password" placeholder="Select.." />
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formButton">
-                <Form.Text className="text-muted">
-                  <Button variant="primary" type="submit">
-                    Add Data
-                  </Button>
-                </Form.Text>
-              </Form.Group>
-            </div>
-          </div>
-        </Form> */}
       </body>
       <Footer />
     </>

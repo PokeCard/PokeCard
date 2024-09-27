@@ -20,9 +20,9 @@ const NavbarAboutUs = () => {
         </div>
         <div className="d-flex gap-4 align-items-center mx-5">
           <div className="text-white d-flex gap-3">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#favorite">Favoruite</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="./Home">Home</Nav.Link>
+            <Nav.Link href="#Favourite">Favourite</Nav.Link>
+            <Nav.Link href="./AboutUs">About</Nav.Link>
           </div>
           <div className="d-flex align-items-center">
             <Image
