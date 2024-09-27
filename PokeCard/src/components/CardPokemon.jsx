@@ -13,14 +13,20 @@ function CardPokemon({ pokemon }) {
         }}
         onClick={() => setModalShow(true)}
       >
-        <Card.Body className="d-flex justify-content-between gap-3 align-items-center">
+        <Card.Body
+          className="d-md-flex justify-content-between text-center text-md-start align-items-center"
+          style={{ cursor: "pointer" }}
+        >
           <div className="">
             <Card.Title className="fs-5">{pokemon.name}</Card.Title>
-            <p style={{ height: "rem" }}>{pokemon.genus}</p>
-            <Card.Text className="fs-6" style={{ width: "6rem" }}>
-              {pokemon.types.index > 0
-                ? `${pokemon.types[0]}, ${pokemon.types[1]}`
-                : `${pokemon.types}`}
+            <p style={{ fontWeight: "400", fontSize: "0.8rem" }}>
+              #{pokemon.id.toString().padStart(3, "0")}
+            </p>
+            <Card.Text
+              className="text-center text-md-start mx-4 mx-md-0 mb-3 md-mb-0"
+              style={{ width: "9rem" }}
+            >
+              {pokemon.genus}
             </Card.Text>
           </div>
           <Card.Img
