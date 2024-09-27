@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import Pagination1 from "../components/Pagination";
+import LoadingSpin from "../components/LoadingSpin";
 
 function Home() {
   const [pokemon, setPokemon] = useState([]);
@@ -48,7 +49,7 @@ function Home() {
           </div>
           <div className="d-flex justify-content-between flex-wrap gap-2">
             {pokemon.map((item) => (
-              <CardPokemon key={item.id} pokemon={item} />
+              <CardPokemon key={item.id} pokemon={item} loadingSpin={loadingSpin} />
             ))}
           </div>
         </div>
